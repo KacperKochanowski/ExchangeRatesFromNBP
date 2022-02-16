@@ -7,6 +7,8 @@ public class RateTable {
     private String no;
     private String effectiveDate;
     private List<Rate> rates;
+    private String tradingDate;
+
 
     public String getTable() {
         return table;
@@ -22,5 +24,9 @@ public class RateTable {
 
     public List<Rate> getRates() {
         return rates;
+    }
+
+    public String getTradingDate() {
+        return tradingDate;
     }
 }
