@@ -14,4 +14,10 @@ public enum Table {
     public String getName() {
         return name;
     }
+
+    @Override
+    public String toString() {
+        return "Tabela "
+                + name;
+    }
 }

@@ -12,7 +12,7 @@ public class Menu {
 
     public void print(){
         for(int i = 0; i < items.size(); i++){
-            System.out.println((i+1) + " " + items.get(i).getLabel());
+            System.out.println((i + 1) + ". " +items.get(i).getLabel());
         }
     }
 

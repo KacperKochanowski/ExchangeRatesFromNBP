@@ -15,7 +15,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class RateRepositoryNBPApi implements RateRepository{
-
+    private static final Rate RATE_PLN = Rate.builder().code("PLN").mid(1).currency("złoty").build();
     private HttpClient client = HttpClient.newHttpClient();
 
     @Override
@@ -29,5 +29,10 @@ public class RateRepositoryNBPApi implements RateRepository{
         final List<RateTable> rateTableList = mapper.readValue(response.body(), new TypeReference<List<RateTable>>() {
         });
         return rateTableList.get(0).getRates();
+    }
+
+    @Override
+    public List<Rate> findByTableLast(Table table) throws IOException, InterruptedException {
+        throw new RuntimeException("Nie zaimplementowana metoda");
     }
 }

@@ -1,5 +1,14 @@
 package nbpApi;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Rate {
     private String currency;
     private String code;
@@ -7,23 +16,16 @@ public class Rate {
     private double bid;
     private double ask;
 
-    public String getCurrency() {
-        return currency;
-    }
-
-    public String getCode() {
+    @Override
+    public String toString() {
         return code;
     }
 
     public double getMid() {
-        return mid;
-    }
-
-    public double getBid() {
-        return bid;
-    }
-
-    public double getAsk() {
-        return ask;
+        if (bid <= 0 && ask <= 0) {
+            return mid;
+        } else {
+            return (ask + bid) / 2;
+        }
     }
 }
